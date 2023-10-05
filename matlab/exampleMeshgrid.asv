@@ -26,21 +26,11 @@ ylabel('v');
 % Para graficar un campo vectorial en 3D, debemos realizar
 % los mismos pasos que hicimos para el caso 2D. Primero
 % establecemos los limites del dominio espacial
-x = -0.8:0.2:1;
-y = -0.8:0.2:1;
-z = -0.8:0.8:1;
+x = 0:6/50:6;
+y = 0:6/50:6;
+z = 0:1:6;
 
 % Creando el dominio espacial
 [XX,YY,ZZ] = meshgrid(x,y,z);
 
 % Calculando las componentes del campo vectorial
-u = ZZ./(XX.^2 + YY.^2 + ZZ.^2);
-v = XX./(XX.^2 + YY.^2 + ZZ.^2);
-w = YY./(XX.^2 + YY.^2 + ZZ.^2);
-
-% Visualizando el campo vectorial
-quiver3(XX,YY,ZZ,u,v,w);
-axis('equal')
-xlabel('u');
-ylabel('v');
-zlabel('w');
